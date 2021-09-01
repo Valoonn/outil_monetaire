@@ -15,3 +15,7 @@
 .react-input {
     width: 100%;
 }
+
+.montant_field {
+    z-index: 0;
+}

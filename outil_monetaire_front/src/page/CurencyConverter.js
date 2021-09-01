@@ -3,6 +3,7 @@ import React, { useState} from 'react';
 import axios from 'axios'
 import Select from 'react-select';
 import TextField from '@material-ui/core/TextField';
+import "../App.css";
 
 function CurencyConverter() {
 
@@ -22,7 +23,7 @@ function CurencyConverter() {
         'x-rapidapi-key': '041a10258emshd33fa121218036cp11f35djsn43b4c261d1b6'
       }
     };
-    
+
     axios.request(options).then(function (response) {
       const tmp_list = [];
       for(var i in response.data.currencies)
@@ -44,7 +45,7 @@ function CurencyConverter() {
           'x-rapidapi-key': '041a10258emshd33fa121218036cp11f35djsn43b4c261d1b6'
         }
       };
-      
+
       axios.request(options).then(function (response) {
         const tmpMoney = parseFloat(response.data.rates[wantCurrency].rate_for_amount);
         const changeRate = parseFloat(response.data.rates[wantCurrency].rate);
@@ -56,13 +57,13 @@ function CurencyConverter() {
     }
 
   return (
-    <div className="page">
+    <div className="container">
       <div className="currency_converter_form">
         <label>Monnaie de base</label>
         <Select options={currencies} className="react-input" onChange={opt => setBaseCurrency(opt.value)}/>
         <label>Monnaie apres convertion</label>
         <Select options={currencies} className="react-input" onChange={opt => setWantCurrency(opt.value)}/>
-        <TextField id="outlined-basic" label="Montant" variant="outlined" onChange={ (event) => setMoney(event.target.value) }/>
+        <TextField id="outlined-basic" label="Montant" variant="outlined" className="montant_field" onChange={ (event) => setMoney(event.target.value) }/>
         <button onClick={convertionResult}>Convertir !</button>
         <p>{convertionRes}</p>
         <p>{convertionInfo}</p>

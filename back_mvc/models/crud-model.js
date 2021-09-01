@@ -1,23 +1,22 @@
 module.exports={
-   
     // createCrud:function(){
     //      data="Form data was inserted";
     //      return data;
     // },
     // fetchCrud:function(){
     //   data="data was fetched";
-    //   return data;   
+    //   return data;
     // },
     // editCrud:function(editData){
     //   data= "Data is edited by id: "+editData;
-    //   return data; 
+    //   return data;
     // },
     // UpdateCrud:function(updateId){
     //   data= "Data was updated by id: "+updateId;
-    //   return data; 
+    //   return data;
     // },
     // deleteCrud:function(deleteId){
     //   data= "Data was deleted by id: "+deleteId;
-    //   return data; 
+    //   return data;
     // }
 }
